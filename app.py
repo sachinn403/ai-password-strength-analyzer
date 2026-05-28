@@ -67,7 +67,7 @@ class PasswordAnalyzerHandler(SimpleHTTPRequestHandler):
         self.wfile.write(encoded)
 
 
-def run(host: str = "127.0.0.1", port: int = 8000) -> None:
+def run(host: str = "0.0.0.0", port: int = 8000) -> None:
     server = ThreadingHTTPServer((host, port), PasswordAnalyzerHandler)
     print(f"AI Password Strength Analyzer running at http://{host}:{port}")
     print("Press Ctrl+C to stop the server.")
