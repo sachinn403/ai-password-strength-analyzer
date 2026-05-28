@@ -13,8 +13,8 @@ This is an original BCA final-year project that checks password strength using a
 - Animated red/orange/green strength circle.
 - Loading spinner while password analysis is running.
 - Secure password generator using Python cryptographic randomness.
-- Copy generated or typed password to clipboard.
-- AI explanation section that explains why the model predicted weak or strong.
+- Copy the generated or typed password to the clipboard.
+- An AI explanation section that explains why the model predicted weak or strong.
 - Crack-time estimate for offline and online attack scenarios.
 - No password storage.
 
@@ -61,6 +61,4 @@ PROJECT_REPORT.md              Final-year project report draft
 PLAGIARISM_GUIDE.md            Originality and submission guidance
 ```
 
-## Academic Note
 
-The code and report are written freshly for this project. A plagiarism percentage cannot be guaranteed because each college may use a different checker, database, and exclusion policy. You should add your own screenshots, college formatting, acknowledgements, and viva observations before final submission.
