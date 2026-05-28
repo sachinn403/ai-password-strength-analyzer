@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Password Strength Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Password analyzer workspace">
+        <div class="input-panel">
+          <div class="brand-row">
+            <div class="brand-mark" aria-hidden="true">AI</div>
+            <div>
+              <p class="eyebrow">Final Year BCA Project</p>
+              <h1>AI Password Strength Analyzer</h1>
+            </div>
+          </div>
+
+          <label class="field-label" for="password">Password</label>
+          <div class="password-row">
+            <input id="password" type="password" autocomplete="off" spellcheck="false">
+            <button id="togglePassword" class="icon-button" type="button" aria-label="Show password" title="Show password">
+              <span id="toggleIcon">Show</span>
+            </button>
+            <button id="copyPassword" class="icon-button copy-button" type="button" aria-label="Copy password" title="Copy password">
+              <span id="copyIcon">Copy</span>
+            </button>
+          </div>
+
+          <div class="generator-row">
+            <label class="length-control" for="passwordLength">
+              <span>Length</span>
+              <input id="passwordLength" type="number" min="12" max="32" value="18">
+            </label>
+            <button id="generatePassword" class="secondary-button" type="button">
+              Generate Strong Password
+            </button>
+          </div>
+
+          <div class="context-grid">
+            <label>
+              <span>Name</span>
+              <input id="nameContext" type="text" autocomplete="off">
+            </label>
+            <label>
+              <span>Email</span>
+              <input id="emailContext" type="email" autocomplete="off">
+            </label>
+            <label>
+              <span>Mobile</span>
+              <input id="mobileContext" type="tel" autocomplete="off">
+            </label>
+          </div>
+
+          <div class="privacy-strip">
+            <span class="dot"></span>
+            Local analysis only. Passwords are not saved in files or logs.
+          </div>
+        </div>
+
+        <div class="result-panel">
+          <div class="score-block">
+            <div class="score-ring" style="--score: 0">
+              <div>
+                <strong id="scoreValue">0</strong>
+                <span id="scoreLabel">Empty</span>
+              </div>
+            </div>
+            <div class="score-meta">
+              <div class="model-chip">
+                <span>Model</span>
+                <strong id="modelVersion">loading</strong>
+              </div>
+              <div id="analysisStatus" class="analysis-status" aria-live="polite" hidden>
+                <span class="spinner" aria-hidden="true"></span>
+                <span>Analyzing password...</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div>
+              <span>AI model</span>
+              <strong id="aiProbability">0%</strong>
+              <small id="aiPrediction">Waiting</small>
+            </div>
+            <div>
+              <span>Entropy</span>
+              <strong id="entropyBits">0 bits</strong>
+              <small id="effectiveEntropy">0 effective bits</small>
+            </div>
+            <div>
+              <span>Offline attack</span>
+              <strong id="offlineTime">Instantly</strong>
+            </div>
+            <div>
+              <span>Online attack</span>
+              <strong id="onlineTime">Instantly</strong>
+            </div>
+          </div>
+
+          <div class="feedback-grid">
+            <section>
+              <h2>Strengths</h2>
+              <ul id="strengthList"></ul>
+            </section>
+            <section>
+              <h2>Risks</h2>
+              <ul id="riskList"></ul>
+            </section>
+            <section>
+              <h2>Suggestions</h2>
+              <ul id="suggestionList"></ul>
+            </section>
+            <section class="wide-card">
+              <h2>AI Explanation</h2>
+              <ul id="explanationList"></ul>
+            </section>
+          </div>
+        </div>
+      </section>
+      <footer class="project-footer">
+        Developed by Sachin Nishad | BCA Final Year Project
+      </footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
